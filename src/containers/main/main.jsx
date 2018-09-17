@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
 export default class Main extends Component {
   render () {
     return (
-      <div>Main<div/>
+      <div>Main</div>
     )
   }
 }
