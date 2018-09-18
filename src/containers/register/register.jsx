@@ -6,6 +6,8 @@ import React, {Component} from 'react';
 import {NavBar,List,WingBlank,WhiteSpace,InputItem,Radio,Button} from 'antd-mobile'
 // import PropTypes from 'prop-types'
 
+import {connect} from 'react-redux';
+
 import Logo from '../../components/logo/logo'
 
 
@@ -33,7 +35,9 @@ this.setState({//更新状态
 
 //注册的回调
   register = () => {
-    // alert(this.state);
+
+
+
     console.log(this.state)
   };
 
@@ -45,6 +49,8 @@ this.setState({//更新状态
 
   render () {
 const {type} = this.state;
+// const {msg,}
+
     return (
       <div>
         <NavBar>硅&nbsp;谷&nbsp;直&nbsp;聘</NavBar>
@@ -103,3 +109,8 @@ const {type} = this.state;
   }
 }
 
+//固定写法
+export default connect(
+  state => ({}),
+  {}
+)

@@ -6,24 +6,26 @@
 import {combineReducers} from 'redux';
 
 
-const initXxx = 1;
-function xxx (state=initXxx,action) {
+const initUser = {
+  username: '', // 用户名
+  type: '', // 用户类型
+  msg: '', // 需要显示的错误信息
+  redirectTo: '', // 需要自动重定向的路径
+};
+function user (state=initUser,action) {
   switch (action.type){
-    default:
-      return state
-  }
-}
-const initXxx2 = {};
-function xxx2 (state=initXxx2,action) {
-  switch (action.type){
+   /* case :
+      return
+    case :
+      return*/
     default:
       return state
   }
 }
 
+
 export default combineReducers({
-  xxx,
-  xxx2
+  user
 })
 /*
 combineReducers()执行的结果是一个新的reducer函数
