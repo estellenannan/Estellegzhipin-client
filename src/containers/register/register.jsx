@@ -17,10 +17,17 @@ state = ({
   type:'dashen'
 });
 
+
+// setusername = (val) =>{
+//   this.setState({
+//     username:val
+//   })
+// } 过于麻烦得设置好几个
+
 //回调监听改变的输入
 handleChange = (name,val) => {
-this.setState({
-  [name] :val//对象里面的变量名用[]包裹
+this.setState({//更新状态
+  [name]: val//对象里面的变量名用[]包裹 obj.[name]
 })
 };
 
@@ -40,7 +47,7 @@ this.setState({
 const {type} = this.state;
     return (
       <div>
-        <NavBar>硅谷直聘</NavBar>
+        <NavBar>硅&nbsp;谷&nbsp;直&nbsp;聘</NavBar>
         <Logo/>
         <WingBlank>
           <List>
