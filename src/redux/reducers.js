@@ -4,7 +4,7 @@
 
 
 import {combineReducers} from 'redux';
-
+import {AUTH_SUCCESS,ERROR_MSG} from './action-types';
 
 const initUser = {
   username: '',
@@ -14,10 +14,10 @@ const initUser = {
 };
 function user (state=initUser,action) {
   switch (action.type){
-   /* case :
-      return
-    case :
-      return*/
+    case AUTH_SUCCESS:
+      return action.data;
+    case ERROR_MSG:
+      return action.data;
     default:
       return state
   }
@@ -29,5 +29,5 @@ export default combineReducers({
 })
 /*
 combineReducers()执行的结果是一个新的reducer函数
-整合后的reducer管理的状态结构为:  对象: {xxx: xxx(), yyy: yyy()}
+整合后的reducer管理的状态结构为:  对象: {user:user()}
  */

@@ -3,7 +3,7 @@
 //主界面路由组件
 import React, {Component} from 'react';
 
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 
 export default class Main extends Component {
   render () {

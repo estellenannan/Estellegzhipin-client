@@ -12,3 +12,9 @@ export const reqRegister = ({username,password,type} )=> ajax(configBase +'/regi
 
 //请求登录接口
 export const reqLogin = ({username,password} )=> ajax(configBase + '/login',{username,password},'POST');
+
+
+//
+export const reqUpdateUser = ({username,password} )=> ajax(configBase + '/login',{username,password},'POST');
+
+

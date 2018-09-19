@@ -11,8 +11,9 @@ import {connect} from 'react-redux';
 import Logo from '../../components/logo/logo'
 import {register} from '../../redux/actions'
 
-export default class Register extends Component {
-state = ({
+ class Register extends Component {
+
+  state = ({
   username:'',
   password:'',
   password2:'',
@@ -47,6 +48,7 @@ this.props.register(this.state);
 
   render () {
 const {type} = this.state;
+
 const {msg,redirectTo} = this.props.user;
 if (redirectTo) {
   // 如果redirectTo有值, 就需要自动跳转到对应的路径
@@ -60,7 +62,7 @@ if (redirectTo) {
         <Logo/>
         <WingBlank>
           <List>
-            {msg ? <p className='error-msg'>{msg}</p>}
+            {msg ? <p className='error-msg'>{msg}</p> :null}
            <InputItem
              placeholder='请输入用户名'
              onChange={(val) => this.handleChange('username',val)}
@@ -113,8 +115,8 @@ if (redirectTo) {
   }
 }
 
-//固定写法
+//固定写法!!!
 export default connect(
-  state => ({user:state.user}),
+  state => ({user: state.user}),
   {register}
-)(register)
+)(Register)
