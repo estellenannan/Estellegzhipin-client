@@ -7,10 +7,10 @@ import {combineReducers} from 'redux';
 
 
 const initUser = {
-  username: '', // 用户名
-  type: '', // 用户类型
-  msg: '', // 需要显示的错误信息
-  redirectTo: '', // 需要自动重定向的路径
+  username: '',
+  type: '',
+  msg: '',
+  redirectTo: ''
 };
 function user (state=initUser,action) {
   switch (action.type){

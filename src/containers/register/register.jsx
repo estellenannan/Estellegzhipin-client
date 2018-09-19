@@ -5,11 +5,11 @@
 import React, {Component} from 'react';
 import {NavBar,List,WingBlank,WhiteSpace,InputItem,Radio,Button} from 'antd-mobile'
 // import PropTypes from 'prop-types'
-
+import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux';
 
 import Logo from '../../components/logo/logo'
-
+import {register} from '../../redux/actions'
 
 export default class Register extends Component {
 state = ({
@@ -19,12 +19,12 @@ state = ({
   type:'dashen'
 });
 
-
 // setusername = (val) =>{
 //   this.setState({
 //     username:val
 //   })
 // } 过于麻烦得设置好几个
+
 
 //回调监听改变的输入
 handleChange = (name,val) => {
@@ -35,9 +35,7 @@ this.setState({//更新状态
 
 //注册的回调
   register = () => {
-
-
-
+this.props.register(this.state);
     console.log(this.state)
   };
 
@@ -49,7 +47,12 @@ this.setState({//更新状态
 
   render () {
 const {type} = this.state;
-// const {msg,}
+const {msg,redirectTo} = this.props.user;
+if (redirectTo) {
+  // 如果redirectTo有值, 就需要自动跳转到对应的路径
+  // render函数中需要自动跳转
+  return <Redirect to={redirectTo}></Redirect>
+}
 
     return (
       <div>
@@ -57,6 +60,7 @@ const {type} = this.state;
         <Logo/>
         <WingBlank>
           <List>
+            {msg ? <p className='error-msg'>{msg}</p>}
            <InputItem
              placeholder='请输入用户名'
              onChange={(val) => this.handleChange('username',val)}
@@ -111,6 +115,6 @@ const {type} = this.state;
 
 //固定写法
 export default connect(
-  state => ({}),
-  {}
-)
+  state => ({user:state.user}),
+  {register}
+)(register)

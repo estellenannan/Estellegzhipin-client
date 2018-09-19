@@ -11,7 +11,7 @@ export default function ajax (url,data={},type='GET') {
   if (type === 'GET') {
 //将data中的数据转化成query字符串接到url中
     //Object.keys(data):得到obj对象自身所有属性的属性名的数组
-    //get的方式  http://ww.wan.com?user=XXX&id=123
+    //举个例子：get的方式  http://ww.wan.com?user=XXX&id=123
     let queryString = '';
       Object.keys(data).forEach(key => {
         const value = data[key];//属性名变成了变量
