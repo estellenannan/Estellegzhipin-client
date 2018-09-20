@@ -57,7 +57,6 @@ export function register({username,password,password2,type}) {
   }
 }
 
-
 //登录的异步action
 export function login({username,password}) {
   return async dispatch => {
@@ -96,7 +95,6 @@ export function UpdateUser(user) {
     }
   }
 }
-
 
 
 

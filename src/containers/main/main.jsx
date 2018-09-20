@@ -18,14 +18,14 @@ import Personal from '../personal/personal';
     return (
       <div>
         <Switch>
-          <Router path='/laoban' component={Laoban}></Router>
           <Router path='/laobanInfo' component={LaobanInfo}></Router>
-          <Router path='/dashen' component={Dashen}></Router>
           <Router path='/dashenInfo' component={DashenInfo}></Router>
+
+          <Router path='/laoban' component={Laoban}></Router>
+          <Router path='/dashen' component={Dashen}></Router>
           <Router path='/message' component={Message}></Router>
           <Router path='/personal' component={Personal}></Router>
         </Switch>
-
       </div>
     )
   }
