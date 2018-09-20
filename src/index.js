@@ -12,7 +12,7 @@ import Login from './containers/login/login'
 import Main from './containers/main/main'
 
 ReactDOM.render((
-  <Provider>
+  <Provider store={store}>
 <HashRouter>
   <Switch>
    <Route path='/register' component={Register}/>
