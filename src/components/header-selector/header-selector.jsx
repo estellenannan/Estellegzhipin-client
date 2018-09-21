@@ -27,23 +27,23 @@ export default class HeaderSelector extends Component {
   onClick	点击每个菜单的回调函数	(el: Object, index: number)*/
   render () {
     const HeaderList = [];
-    for (let i = 0; i <HeaderList .length; i++) {
+    for (let i = 0; i < 20; i++) {
       HeaderList.push({ //data	传入的菜单数据	类型是Array<{icon, text}>
-        icon:require(`./images/头像${i+1}.png`),//加载的头像图片模块 用require
-        text:`头像${i+1}`
+        icon: require ('./images/头像'+(i+1)+'.png'),//加载的头像图片模块 用require
+        text: '头像'+(i+1)
       })
     }
-    //动态确定头部
+    //动态确定头部 //List的属性 renderHeader
 const {icon} = this.state;
-    const headerUI = icon ? <div><span>已选择头像</span> <img src={icon} /></div> : '还没有选择头像';
+    const headerUi = icon ? <div><span>已选择头像</span> <img src={icon} alt="icon"/></div> : '还没有选择头像';
 
-    return (//List的属性 renderHeader
+    return (
       <div>
-       <List renderHeader={() => {headerUI}}>//List的属性
+       <List renderHeader = { () =>  headerUi } >
         <Grid data={HeaderList}
               onClick={this.selectHeader}
-              columnNum={5}
-        />
+              columnNum={5}  >
+        </Grid >
       </List>
       </div>
     )

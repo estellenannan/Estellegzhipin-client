@@ -22,7 +22,7 @@ class LaobanInfo extends Component {
     company:''
   };
   setHeader=(header) => {//设置更新header
-    this.setHeader({
+    this.setState({
       header
     })
   };

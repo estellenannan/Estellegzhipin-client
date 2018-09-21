@@ -17,4 +17,9 @@ export const reqLogin = ({username,password} )=> ajax(configBase + '/login',{use
 //请求更新用户接口
 export const reqUpdateUser = (user )=> ajax(configBase + '/update',user,'POST');
 
+// 请求获取当前用户
+export const reqUser = () => ajax(BASE + '/user');
+
+// 请求获取指定类型的用户列表
+export const reqUserList = (type) => ajax(BASE+'/userlist', {type});
 

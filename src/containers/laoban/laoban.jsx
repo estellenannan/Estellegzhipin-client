@@ -6,7 +6,11 @@ import React, {Component} from 'react';
 
 import {connect} from 'react-redux'
 
+
+//要自动时时收集数据
  class Laoban extends Component {
+
+
   render () {
     return (
       <div>Laoban</div>
@@ -14,6 +18,6 @@ import {connect} from 'react-redux'
   }
 }
 export default connect (
-  state => ({}),
-  {}
+  state => ({ }),
+  { }
 )(Laoban)

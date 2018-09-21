@@ -15,7 +15,7 @@
  */
 
 
-export default function  getRedirectPath (type,header){
+export default  function  getRedirectPath (type,header){
 let path = '';
 
 if (type === 'laoban') {

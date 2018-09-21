@@ -8,9 +8,10 @@ import {
   AUTH_SUCCESS,
   ERROR_MSG,
   RECEIVE_USER,
-  RESET_USER
+  RESET_USER,
+  RECEIVE_USER_LIST
 } from './action-types';
-import {getRedirectPath} from '../untils/index'
+import getRedirectPath from '../untils/index'
 const initUser = {
   username: '',
   type: '',
@@ -34,11 +35,23 @@ function user (state=initUser,action) {
   }
 }
 
+// 管理userList数据
+const initUserList = [];
+function userList  (state=initUserList,action) {
+  switch (action.type){
+    case RECEIVE_USER_LIST:
+      return action.data;
+    default:
+      return state
+  }
+}
+
 
 export default combineReducers({
-  user
+  user,
+  userList
 })
 /*
 combineReducers()执行的结果是一个新的reducer函数
-整合后的reducer管理的状态结构为:  对象: {user:user()}
+整合后的reducer管理的状态结构为:  {user: user(), userList: userList()}
  */

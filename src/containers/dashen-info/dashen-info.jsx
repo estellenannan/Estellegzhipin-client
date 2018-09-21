@@ -22,7 +22,7 @@ class DashenInfo extends Component {
 
 
   setHeader=(header) => {//设置更新header
-this.setHeader({
+this.setState({
   header
 })
   };
@@ -44,17 +44,20 @@ this.setState(
       <div>
        <NavBar>大神信息完善</NavBar>
         <HeaderSelector setHeader={this.setHeader}/>
+
         <InputItem
           placeholder='请输入求职岗位'
-          onChange={ (val) => {this.handleChange('post',val)}}
+          onChange={ val => this.handleChange('post',val)}
         >
           求职岗位:</InputItem>
+
         <TextareaItem
-        titl="个人介绍:"
+        title="个人介绍:"
         placeholder='请输入个人介绍'
         rows={2}
-        onChange={ (val) => {this.handleChange('info',val)}}
+        onChange={ val => this.handleChange('info',val)}
         />
+
         <Button type='primary'
                 onClick = {this.props.UpdateUser(this.state)}
         >

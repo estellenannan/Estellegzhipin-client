@@ -22,6 +22,9 @@ if(queryString){//有的请求不需要参数这时需要进行判断，不需�
        queryString = queryString.substring(0,queryString.length-1);
        url += '?' + queryString;
 }
+    // 发get请求
+    return axios.get(url)
+
   } else {//POST请求
 return axios.post(url,data)
   }

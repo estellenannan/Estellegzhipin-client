@@ -6,7 +6,7 @@ import {NavBar,List,WingBlank,WhiteSpace,InputItem,Button} from 'antd-mobile'
 import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux';
 
-import login from '../../redux/actions'
+import {login} from '../../redux/actions'
 import Logo from '../../components/logo/logo'
 
 
