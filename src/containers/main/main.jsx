@@ -4,7 +4,7 @@
 import React, {Component} from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {TabBar,NavBar} from 'antd-mobile'
+import {NavBar} from 'antd-mobile'
 
 import Message  from '../message/message';
 import LaobanInfo  from '../laoban-info/laoban-info';
@@ -46,24 +46,24 @@ import {getUser} from '../../redux/actions'
        icon: 'personal',
        text: '个人',
      }
-   ]
+   ];
 
 
   render () {
     return (
       <div>
-        <NavBar></NavBar>
+        <NavBar/>
         <Switch>
-          <Route path='/laobanInfo' component = {LaobanInfo}></Route>
-          <Route path='/dashenInfo' component = {DashenInfo}></Route>
+          <Route path='/laobanInfo' component = {LaobanInfo} />
+          <Route path='/dashenInfo' component = {DashenInfo} />
 
-          <Route path='/laoban' component = {Laoban}></Route>
-          <Route path='/dashen' component = {Dashen}></Route>
-          <Route path='/message' component = {Message}></Route>
-          <Route path='/personal' component = {Personal}></Route>
+          <Route path='/laoban' component = {Laoban}  />
+          <Route path='/dashen' component = {Dashen} />
+          <Route path='/message' component = {Message} />
+          <Route path='/personal' component = {Personal} />
         </Switch>
 
-        <NavFooter></NavFooter>
+        <NavFooter navList={this.navList}/>
       </div>
     )
   }
