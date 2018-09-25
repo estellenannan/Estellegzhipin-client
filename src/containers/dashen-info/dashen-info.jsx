@@ -28,10 +28,10 @@ this.setState({
   };
 
   handleChange = (name,val) => {
-this.setState(
-  {  [name]:val
-  })
-  };
+      this.setState(
+        {  [name]:val
+        })
+        };
 
   render () {
     //如果信息完善了 就直接跳转到大神主界面

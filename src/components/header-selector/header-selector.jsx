@@ -29,12 +29,13 @@ export default class HeaderSelector extends Component {
     const HeaderList = [];
     for (let i = 0; i < 20; i++) {
       HeaderList.push({ //data	传入的菜单数据	类型是Array<{icon, text}>
-        icon: require ('./images/头像'+(i+1)+'.png'),//加载的头像图片模块 用require
+        icon: require('../../assets/images/头像'+(i+1)+'.png'), // 图片对象
+//加载的头像图片模块 用require
         text: '头像'+(i+1)
       })
     }
     //动态确定头部 //List的属性 renderHeader
-const {icon} = this.state;
+    const {icon} = this.state;
     const headerUi = icon ? <div><span>已选择头像</span> <img src={icon} alt="icon"/></div> : '还没有选择头像';
 
     return (

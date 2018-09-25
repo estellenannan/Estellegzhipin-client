@@ -28,7 +28,6 @@ const  Item = TabBar.Item;
      const path = this.props.location.pathname;
      const navList = this.props.navList.filter(nav => !nav.hide);
      return (
-       <div>
          <TabBar>
            {
              navList.map((nav,inex) => (
@@ -43,7 +42,6 @@ const  Item = TabBar.Item;
                     ))
            }
          </TabBar>
-       </div>
      )
 
    }
